@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Library 2022</title>
+</head>
+<body>
+    <h1>Library 2022</h1>
+    <button  class= "btn btn-success" onclick="openAddBox()">Add Book</button>
+    <div class="library">
+        <div class="book">
+            <h2>Title</h2>
+            <h3>Author</h3>
+            <h4>12 Pages</h4>
+            <button class="btn btn-light">Read</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+        <div class="book">
+            <h2>Title 2</h2>
+            <h3>Author</h3>
+            <h4>12 Pages</h4>
+            <button class="btn btn-light">Read</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+        <div class="book">
+            <h2>Title 3</h2>
+            <h3>Author</h3>
+            <h4>12 Pages</h4>
+            <button class="btn btn-light">Read</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+        <div class="book">
+            <h2>Title 4</h2>
+            <h3>Author</h3>
+            <h4>12 Pages</h4>
+            <button class="btn btn-light">Read</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+        <div class="book">
+            <h2>Title 5</h2>
+            <h3>Author</h3>
+            <h4>12 Pages</h4>
+            <button class="btn btn-light">Read</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+    <div class="addBook" id="addBookBox">
+        <form>
+            <input type="text" placeholder="Title" id="title">
+            <input type="text" placeholder="Author" id="author">
+            <input type="number" placeholder="Pages" id="pages">
+            <button class="btn btn-success">Add</button>
+        </form>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
