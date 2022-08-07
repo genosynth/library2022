@@ -1,5 +1,6 @@
 html {
     font-family:  sans-serif;
+   
 }
 
 .library {
@@ -7,7 +8,24 @@ html {
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 2%;
+    opacity: 100%;
+    animation-name: refresh-opaque;
+    animation-duration:2s
+   
 }
+
+.library-opaque {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2%;
+    opacity: 50%;
+    animation-name: background-opaque;
+    animation-duration: 2s;
+
+}
+
+
 
 .book {
     border: 1px solid;
@@ -34,5 +52,28 @@ form {
     padding: 5%;
     border: 1px solid;
     margin: 0 auto;
-    width: 25%;
+    width: 500px;    
+    top:25%;
+    opacity:100%;
+    background-color: rgb(204, 204, 204);
+    animation-name: box;
+    animation-duration: 2s;
+    
+}
+
+@keyframes box {
+    from {top: 0%; opacity: 0%;}
+    to {top: 25%; opacity: 100%}
+  }
+
+@keyframes background-opaque {
+
+    from {opacity: 100%;}
+    to {opacity: 50%}    
+}
+
+@keyframes refresh-opaque {
+
+    from {opacity: 50%;}
+    to {opacity: 100%}    
 }
