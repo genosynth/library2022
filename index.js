@@ -1,4 +1,9 @@
 let myLibrary = [];
+if (localStorage.getItem("library")){
+    myLibrary = JSON.parse(localStorage.getItem("library"))
+}
+
+
 
 function Book(title,author,pages,read=false) {
   this.title = title;
@@ -24,12 +29,18 @@ function addBookToLibrary() {
   myLibrary.push(book)
   document.getElementsByClassName("library-opaque")[0].className = "library"
   document.getElementById("addBookBox").style.visibility="hidden"
+  localStorage.setItem('library', JSON.stringify(myLibrary));
   loadDOMLibrary()
 }
 
 function openAddBox(){
     document.getElementById("addBookBox").style.visibility="visible"
     document.getElementsByClassName("library")[0].className = "library-opaque"
+   document.getElementById("close").addEventListener("click", ()=>{
+    document.getElementsByClassName("library-opaque")[0].className = "library"
+  document.getElementById("addBookBox").style.visibility="hidden"
+  loadDOMLibrary()
+   })
 }
 
 function loadDOMLibrary(){
@@ -48,7 +59,7 @@ function loadDOMLibrary(){
     cardDiv.className = "book"
     title.innerText = myLibrary[i].title;
     author.innerText = myLibrary[i].author;
-    pages.innerText = myLibrary[i].pages ;
+    pages.innerText = `${myLibrary[i].pages} pages ` ;
 
     if (myLibrary[i].read){
       readBtn.innerText =  "Read";
@@ -73,6 +84,8 @@ function loadDOMLibrary(){
         readBtn.className = "btn btn-light";
     }
 
+    localStorage.setItem('library', JSON.stringify(myLibrary));
+
 
     })
     deleteBtn.innerText = "Delete";
@@ -80,6 +93,7 @@ function loadDOMLibrary(){
     deleteBtn.addEventListener("click", ()=>{
      
       myLibrary.splice(i,1);
+      localStorage.setItem('library', JSON.stringify(myLibrary));
       loadDOMLibrary()
     })
 
@@ -94,6 +108,4 @@ function loadDOMLibrary(){
   }
 }
 
-let book1 = new Book("fightclub","chuck",10)
-myLibrary.push(book1)
 loadDOMLibrary()
